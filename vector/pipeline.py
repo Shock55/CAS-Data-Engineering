@@ -16,7 +16,7 @@ def create_model() -> Any:
     pass
 
 
-class Pipeline:
+class Pipeline(CreateModel):
 
     def __init__(self):
         super().__init__()
