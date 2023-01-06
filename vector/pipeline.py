@@ -1,22 +1,26 @@
+import re
 import os
+import string
+import logging
 import pandas as pd
 import numpy as np
 
+from typing import List
 from typing import Any
 from typing import Type
+from typing import Dict
 
 from joblib import load
 from sklearn.feature_extraction.text import CountVectorizer
 
 
+logger = logging.getLogger(__name__)
+
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
-def create_model() -> Any:
-    pass
-
-
-class Pipeline(CreateModel):
+class Pipeline(object):
 
     def __init__(self):
         super().__init__()
