@@ -11,9 +11,9 @@ jobs:
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }} 
           username: ${{ secrets.USERNAME }}
-     
           script: |
             mkdir app
             cd app 
