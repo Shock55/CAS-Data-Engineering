@@ -18,5 +18,9 @@ jobs:
             cd app 
             cd CAS-Data-Engineering
             git pull
+            python -m venv venv
             docker compose build
             docker compose up --detach
+            venv/bin/pip install -r requirements.txt
+            venv/bin/pytest
+            rm -rf venv
