@@ -11,7 +11,6 @@ from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# this is to include backend dir in sys.path so that we can import from db,main.py
 
 from db.base import Base
 from db.session import get_db
@@ -30,7 +29,6 @@ SQLALCHEMY_DATABASE_URL = "sqlite:///./test_db.db"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
-# Use connect_args parameter only with sqlite
 SessionTesting = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
@@ -50,7 +48,7 @@ def db_session(app: FastAPI) -> Generator[SessionTesting, Any, None]:
     connection = engine.connect()
     transaction = connection.begin()
     session = SessionTesting(bind=connection)
-    yield session  # use the session in tests.
+    yield session
     session.close()
     transaction.rollback()
     connection.close()
@@ -58,12 +56,7 @@ def db_session(app: FastAPI) -> Generator[SessionTesting, Any, None]:
 
 @pytest.fixture(scope="module")
 def client(
-    app: FastAPI, db_session: SessionTesting
-) -> Generator[TestClient, Any, None]:
-    """
-    Create a new FastAPI TestClient that uses the `db_session` fixture to override
-    the `get_db` dependency that is injected into routes.
-    """
+    app: FastAPI, db_session: SessionTesting) -> Generator[TestClient, Any, None]:
 
     def _get_test_db():
         try:

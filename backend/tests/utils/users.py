@@ -15,10 +15,6 @@ def user_authentication_headers(client: TestClient, email: str, password: str):
 
 
 def authentication_token_from_email(client: TestClient, email: str, db: Session):
-    """
-    Return a valid token for the user with given email.
-    If the user doesn't exist it is created first.
-    """
     password = "random-passW0rd"
     user = get_user_by_email(email=email, db=db)
     if not user:
