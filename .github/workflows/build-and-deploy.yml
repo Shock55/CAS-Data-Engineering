@@ -1,17 +1,21 @@
-name: CI
+name: Build & Deploy
+on:
+  push:
+    branches: [master]
 
-on: [push]
 jobs:
   deploy:
-    runs-on: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Deploy
-        uses: appleboy/ssh-action@master
+      - name: seda
+        uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{ secrets.HOST }}
+          key: ${{ secrets.SSHKEY }} 
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          command_timeout: 200m
-          run: ./.github/build.sh
+     
+          script: |
+            mkdir app
+            cd app 
+            git@github.com:Shock55/CAS-Data-Engineering.git
+            echo 'Deployment successful to digital ocean' 
