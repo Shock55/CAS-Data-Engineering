@@ -17,5 +17,5 @@ jobs:
           script: |
             mkdir app
             cd app 
-            https://github.com/Shock55/CAS-Data-Engineering.git
+            git clone https://github.com/Shock55/CAS-Data-Engineering.git
             echo 'Deployment successful to digital ocean' 
