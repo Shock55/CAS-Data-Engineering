@@ -15,10 +15,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            mkdir app
             cd app 
-            git clone https://github.com/Shock55/CAS-Data-Engineering.git
             cd CAS-Data-Engineering
+            git pull
             docker compose build
             docker compose up --detach
-            echo 'Deployment successful to digital ocean' 
