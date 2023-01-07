@@ -8,13 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: seda
-        uses: appleboy/ssh-action@v0.1.2
+        uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }} 
-          username: ${{ secrets.USERNAME }}
-          passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: |
             mkdir app
             cd app 
