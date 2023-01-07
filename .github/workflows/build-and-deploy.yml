@@ -14,6 +14,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }} 
           username: ${{ secrets.USERNAME }}
+          passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: |
             mkdir app
             cd app 
