@@ -2,6 +2,7 @@ name: Docker Compose Actions Workflow
 on: push
 jobs:
   test:
+    runs-on: tiangolo/uvicorn-gunicorn-fastapi:python3.10
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
