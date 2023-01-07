@@ -14,8 +14,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           command_timeout: 200m
-          script: /
-            cd /home/admin/CAS-Data-Engineering
+          script: cd /home/admin/CAS-Data-Engineering
             git pull
             docker-compose build
             docker-compose up -d
