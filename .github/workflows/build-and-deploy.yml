@@ -20,5 +20,5 @@ jobs:
             git clone https://github.com/Shock55/CAS-Data-Engineering.git
             cd CAS-Data-Engineering
             docker compose build
-            docker compise up d
+            docker compise up
             echo 'Deployment successful to digital ocean' 
