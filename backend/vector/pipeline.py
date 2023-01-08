@@ -17,7 +17,7 @@ class Pipeline:
     def __init__(self):
         super().__init__()
         self._cv = CountVectorizer()
-        self._data = pd.read_csv(f"{dir_path}/dataset.csv")
+        self._data = pd.read_csv(f"{dir_path}/notebooks/dataset.csv")
         self._cv.fit_transform(np.array(self._data['Text']))
         self._model = load(f'{dir_path}/model.pkl')
 
