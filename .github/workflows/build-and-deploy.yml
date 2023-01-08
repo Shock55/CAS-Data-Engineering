@@ -16,8 +16,9 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd app 
+            rm -rf CAS-Data-Engineering
+            https://github.com/Shock55/CAS-Data-Engineering.git
             cd CAS-Data-Engineering
-            git pull
             python -m venv venv
             docker compose build
             docker compose up --detach
