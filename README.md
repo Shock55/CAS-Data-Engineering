@@ -40,4 +40,4 @@ docker-compose run
 ```
 
 Afterwards go to http://localhost:5000/docs
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](.github/docs_pictures/docs_page.png "Optional Title")
