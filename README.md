@@ -7,11 +7,6 @@
 Language detection is a fastapi and scikit-learn based machine learning api
 to detect languages.
 
-- Docker Compose
-- Sqlite
-- Fastpi
-- scikit-learn
-
 ## Features
 - Supply text to the api and get the detected language back
 
