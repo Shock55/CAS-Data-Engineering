@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: seda
+      - name: Deploy language detection to digital ocean
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.HOST }}
