@@ -17,7 +17,7 @@ jobs:
           script: |
             cd app 
             rm -rf CAS-Data-Engineering
-            https://github.com/Shock55/CAS-Data-Engineering.git
+            git clone https://github.com/Shock55/CAS-Data-Engineering.git
             cd CAS-Data-Engineering
             python -m venv venv
             docker compose build
