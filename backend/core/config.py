@@ -19,8 +19,8 @@ class Settings:
             {'name': 'users',
              'description': 'User registration operation'},
             {'name': 'login',
-             'description': 'User loging operation'}
-            ]
+             'description': 'User loging operation'}]
+
     USE_SQLITE_DB: str = os.getenv("USE_SQLITE_DB")
     SECRET_KEY: str = os.getenv("SECRET_KEY")
     ALGORITHM = "HS256"
