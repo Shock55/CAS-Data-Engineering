@@ -1,7 +1,5 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.10
 
-USER admin
-
 COPY requirements.txt /
 
 RUN python -m pip install --upgrade pip
