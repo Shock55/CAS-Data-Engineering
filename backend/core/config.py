@@ -15,7 +15,7 @@ class Settings:
              'description': 'User registration operation'},
             {'name': 'login',
              'description': 'User loging operation'}]
-
+    SECRET_KEY = "öasljhdfgköladsfglkbhadfgb"
     ALGORITHM = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES = 30  # in mins
     TEST_USER_EMAIL = "test@example.com"
