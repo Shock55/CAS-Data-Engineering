@@ -8,7 +8,6 @@ Language detection is a fastapi and scikit-learn based machine learning api
 to detect languages.
 
 ## Features
-- User Auth
 - Supply text to the api and get the detected language back
 
 ## Tech
